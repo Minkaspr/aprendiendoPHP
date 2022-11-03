@@ -48,7 +48,7 @@
 </head>
 
 <body>
-  <form action="09_ValidarFormulario.php" method="POST">
+  <form action="12_ValidarFormulario.php" method="POST">
     <?php
     //Declarar variables
     $nombre = "";
@@ -111,6 +111,7 @@
     ?>
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre" value="<?=$nombre?>"><br />
+    <!-- select option -->
     <label>Pais de Origen</label><br/>
     <select name="pais" id="">
       <option value="">Selecciona un pais</option>
@@ -127,10 +128,12 @@
                             echo "selected";
                           } ?>>Argentina</option>
     </select><br/>
+    <!-- radio buttons -->
     <label for="nivel">Nivel de desarrollo</label><br/>
     <input type="radio" name="nivel" value="principiante" <?php if($nivel=="principiante") echo "checked";?>>Principiante
     <input type="radio" name="nivel" value="intermedio" <?php if($nivel=="intermedio"){echo "checked";}?>>Intermedio
     <input type="radio" name="nivel" value="avanzado" <?php if($nivel=="avanzado") {echo "checked";}?>>Avanzado<br/>
+    <!-- check list -->
     <label>Lenguajes de Programacion</label><br/>
     <input type="checkbox" name="lenguajes[]" value="php"<?php if(in_array("php",$lenguajes)){echo "checked";}?> >PHP <br/>
     <input type="checkbox" name="lenguajes[]" value="js" <?php if(in_array("js",$lenguajes))echo "checked";?> >Javascript <br/>
